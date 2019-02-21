@@ -18,7 +18,6 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from absl import app as absl_app
 from absl import flags
 import tensorflow as tf  # pylint: disable=g-bad-import-order
 
@@ -86,6 +85,9 @@ def run(flags_obj):
 
   Raises:
     ValueError: If fp16 is passed as it is not currently supported.
+
+  Returns:
+    Dictionary of training and eval stats.
   """
   config = keras_common.get_config_proto()
   # TODO(tobyboyd): Remove eager flag when tf 1.0 testing ends.
